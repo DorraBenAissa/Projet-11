@@ -1,0 +1,8 @@
+.container{
+   max-width: 1300px;
+   min-height: 93vh;
+   margin: 0 auto;
+   @media (min-width: 920px) {
+      width: 90%;
+   }
+}
