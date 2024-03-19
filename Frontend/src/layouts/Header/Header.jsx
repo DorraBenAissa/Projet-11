@@ -1,7 +1,7 @@
 // IMPORTS
 import './header.scss'
 import { Link } from 'react-router-dom'
-import Logo from '../../assets/img/argentBankLogo.png'
+import Logo from '../../assets/argentBankLogo.png'
 
 function Header() {
    return (
