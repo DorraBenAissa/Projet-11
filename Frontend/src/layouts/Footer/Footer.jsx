@@ -2,7 +2,9 @@ import "./footer.scss";
 
 function Footer() {
    return (
-      <p>Footer</p>
+      <footer class="footer">
+         <p class="footer-text">Copyright 2020 Argent Bank</p>
+      </footer>
    )
  }
  
