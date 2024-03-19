@@ -2,7 +2,12 @@ import "./error.scss";
 
 function Error() {
    return (
-      <p>page error</p>
+      <main>
+         <section className="error">
+            <h1>404</h1>
+            <p>Oups... 🤭 Page not found</p>
+         </section>
+      </main>
    )
  }
  
