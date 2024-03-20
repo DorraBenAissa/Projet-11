@@ -39,7 +39,7 @@ function SignUp() {
          password: password,
          firstName: firstName,
          lastName: lastName,
-         username: username
+         userName: username
       };
 
       fetch('http://localhost:3001/api/v1/user/signup', {

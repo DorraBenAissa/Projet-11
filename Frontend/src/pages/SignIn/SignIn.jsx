@@ -2,12 +2,15 @@
 import "./signin.scss";
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from 'react-redux';
 
 function SignIn() {
 
    const [username, setUsername] = useState(''); 
    const [password, setPassword] = useState('');
    const [error, setError] = useState('');
+   
+   const dispatch = useDispatch();
 
    const navigate = useNavigate();
 
@@ -43,6 +46,12 @@ const handleSignIn = (event) => {
             return;
          }
          else {
+            dispatch({ // Enregistrement du token dans le store
+               type: 'LOGIN',
+               payload: {
+               token: data.body.token,
+               }
+            });
             navigate("/user");
          }
       })
