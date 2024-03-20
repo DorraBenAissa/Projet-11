@@ -14,6 +14,10 @@ function Account() {
                <NavLink className='btn-user' to="/signup">
                   <p>Sign Up</p>
                </NavLink>
+               
+               <NavLink className='btn-user' to="/signin">
+                  <p>Sign In</p>
+               </NavLink>
             </div>
       </>
    )
