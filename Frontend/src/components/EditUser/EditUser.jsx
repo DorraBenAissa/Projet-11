@@ -9,6 +9,7 @@ function EditUser() {
 
    const [showForm, setShowForm] = useState(false);
    const [newUsername, setNewUsername] = useState('');
+   const [error, setError] = useState(false);
 
    const dispatch = useDispatch();
 
@@ -34,7 +35,7 @@ function EditUser() {
          });
 
          if (response.ok) {
-         console.log(response);
+            setError(false);
          dispatch({
             type: 'SET_USER',
             payload: {
@@ -46,11 +47,11 @@ function EditUser() {
 
          
          } else {
-         console.error('Erreur lors de l envoi du nouveau nom d utilisateur');
+         setError(true);
          }
          
       } catch (error) {
-         console.error('Erreur lors de la requête :', error);
+         setError(true);
       }
       setNewUsername('');
       setShowForm(false);
@@ -60,7 +61,7 @@ function EditUser() {
       <>
           <section className="account-header">
             <h1>Welcome back, {firstname} {lastname}!</h1>
-
+            {error && <p className="sign-in__error-message">Erreur lors de la modification du User Name, merci de réessayer !</p>}
             {!showForm && (
                <button className="transaction-button button" onClick={toggleForm}>Edit your name</button>
             )}

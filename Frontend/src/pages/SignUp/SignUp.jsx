@@ -58,11 +58,12 @@ function SignUp() {
                return;
             }
             else {
+               setError(false);
                navigate("/signin");
             }
          })
          .catch(error => {
-            console.error(error);
+            setError(true);
          });
    };
 
@@ -101,7 +102,7 @@ function SignUp() {
                   <input className={error ? 'sign-up__error-border' : ''} type="text" id="userName" value={username} onChange={handleUsernameChange} required/>
                </div>
 
-               {error && <p className="sign-up__error-message">An error has occurred</p>}
+               {error && <p className="sign-up__error-message">Une erreur est produite lors de la création du compte, merci de réessayer !</p>}
 
                <button className="sign-up__button" type="submit">Sign Up</button>
             </form>
